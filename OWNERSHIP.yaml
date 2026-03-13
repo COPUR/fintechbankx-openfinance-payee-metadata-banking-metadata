@@ -1,0 +1,7 @@
+bounded_context: "open_finance"
+service_id: "svc-of-banking-metadata"
+application_id: "app.of.banking-metadata"
+data_owner_pattern: "db_of_banking_metadata_prod"
+event_namespace: "evt.of.metadata"
+owning_squad: "Payee and Metadata Squad"
+wave: "2"

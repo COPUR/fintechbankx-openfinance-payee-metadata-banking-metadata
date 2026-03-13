@@ -1,2 +1,11 @@
-# openfinance-banking-metadata-service
-DDD/EDA open_finance capability (svc-of-banking-metadata) owner:Payee and Metadata Squad wave:2
+# fintechbankx-openfinance-banking-metadata-service
+
+## Ownership Metadata
+
+- Bounded context: open_finance
+- Service ID: svc-of-banking-metadata
+- Application ID: app.of.banking-metadata
+- Data owner pattern: db_of_banking_metadata_prod
+- Event namespace: evt.of.metadata
+- Owning squad: Payee and Metadata Squad
+- Wave: 2
