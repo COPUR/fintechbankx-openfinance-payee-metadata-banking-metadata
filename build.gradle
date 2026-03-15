@@ -35,6 +35,18 @@ dependencies {
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
 
+sourceSets {
+    test {
+        java {
+            setSrcDirs(['src/test/java'])
+            include 'com/enterprise/openfinance/bankingmetadata/ApplicationTest.java'
+            include 'com/enterprise/openfinance/bankingmetadata/application/**'
+            include 'com/enterprise/openfinance/bankingmetadata/domain/**'
+            include 'com/enterprise/openfinance/bankingmetadata/infrastructure/**'
+        }
+    }
+}
+
 test {
     useJUnitPlatform()
 }
