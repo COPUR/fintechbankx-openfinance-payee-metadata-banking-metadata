@@ -1,0 +1,41 @@
+openfinance:
+  bankingmetadata:
+    persistence:
+      mode: ${OPENFINANCE_BM_PERSISTENCE_MODE:mongodb}
+    cache:
+      mode: ${OPENFINANCE_BM_CACHE_MODE:redis}
+      ttl: ${OPENFINANCE_BM_CACHE_TTL:30s}
+      key-prefix: ${OPENFINANCE_BM_CACHE_KEY_PREFIX:openfinance:bankingmetadata}
+    security:
+      jwt-secret: ${OPENFINANCE_BM_JWT_SECRET:RUNTIME_MANAGED__USE_SYSTEM_SECRETS_API}
+      issuer: ${OPENFINANCE_BM_JWT_ISSUER:}
+      audience: ${OPENFINANCE_BM_JWT_AUDIENCE:}
+      dpop-required: ${OPENFINANCE_BM_DPOP_REQUIRED:true}
+      dpop-max-proof-age: ${OPENFINANCE_BM_DPOP_MAX_PROOF_AGE:PT5M}
+      dpop-clock-skew: ${OPENFINANCE_BM_DPOP_CLOCK_SKEW:PT30S}
+
+spring:
+  application:
+    name: ${OPENFINANCE_BM_SERVICE_NAME:openfinance-banking-metadata-service}
+  data:
+    mongodb:
+      uri: ${OPENFINANCE_BM_MONGODB_URI:mongodb://localhost:27017/open_finance_banking_metadata}
+    redis:
+      url: ${OPENFINANCE_BM_REDIS_URL:redis://localhost:6379}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics,prometheus
+  endpoint:
+    health:
+      probes:
+        enabled: true
+  metrics:
+    tags:
+      service: ${spring.application.name}
+
+logging:
+  pattern:
+    level: "%5p [trace_id=%X{trace_id:-} interaction_id=%X{interaction_id:-}]"
