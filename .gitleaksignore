@@ -1,0 +1,6 @@
+src/main/java/com/enterprise/openfinance/bankingmetadata/infrastructure/config/MetadataSecurityProperties.java:generic-api-key:10
+src/test/java/com/enterprise/openfinance/bankingmetadata/infrastructure/security/SecurityTestTokenFactory.java:generic-api-key:25
+src/test/java/com/enterprise/openfinance/bankingmetadata/infrastructure/functional/MetadataUatTest.java:generic-api-key:37
+src/test/java/com/enterprise/openfinance/bankingmetadata/infrastructure/integration/MetadataApiIntegrationTest.java:generic-api-key:36
+src/test/java/com/enterprise/openfinance/bankingmetadata/openbanking/gateway/OpenBankingGatewayTest.java:generic-api-key:426
+src/test/java/com/enterprise/openfinance/bankingmetadata/shared/infrastructure/security/FAPISecurityTest.java:jwt:105
