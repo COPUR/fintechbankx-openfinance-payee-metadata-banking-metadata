@@ -15,6 +15,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.math.BigDecimal;
 import java.util.List;
+import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
@@ -51,10 +52,10 @@ class LoanProcessingServiceTest {
     private LoanProcessingService loanProcessingService;
     
     // Virtual Thread executors for testing
-    private final var loanProcessingExecutor = Executors.newVirtualThreadPerTaskExecutor();
-    private final var riskAssessmentExecutor = Executors.newVirtualThreadPerTaskExecutor();
-    private final var complianceCheckExecutor = Executors.newVirtualThreadPerTaskExecutor();
-    private final var fraudDetectionExecutor = Executors.newVirtualThreadPerTaskExecutor();
+    private final ExecutorService loanProcessingExecutor = Executors.newVirtualThreadPerTaskExecutor();
+    private final ExecutorService riskAssessmentExecutor = Executors.newVirtualThreadPerTaskExecutor();
+    private final ExecutorService complianceCheckExecutor = Executors.newVirtualThreadPerTaskExecutor();
+    private final ExecutorService fraudDetectionExecutor = Executors.newVirtualThreadPerTaskExecutor();
     
     @BeforeEach
     void setUp() {
