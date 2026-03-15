@@ -18,6 +18,27 @@ repositories {
     mavenCentral()
 }
 
+sourceSets {
+    test {
+        java {
+            // Exclude migrated legacy tests that belong to other bounded contexts.
+            exclude '**/ai/**'
+            exclude '**/analytics/**'
+            exclude '**/architecture/**'
+            exclude '**/banking/**'
+            exclude '**/customer/**'
+            exclude '**/events/**'
+            exclude '**/java21/**'
+            exclude '**/loan/**'
+            exclude '**/openbanking/**'
+            exclude '**/payment/**'
+            exclude '**/performance/**'
+            exclude '**/bankingmetadata/security/**'
+            exclude '**/shared/**'
+        }
+    }
+}
+
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.boot:spring-boot-starter-validation'
