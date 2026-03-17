@@ -10,6 +10,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 import java.util.stream.IntStream;
@@ -39,10 +40,10 @@ class PaymentProcessingServiceTest {
     private PaymentProcessingService paymentProcessingService;
     
     // Virtual Thread executors for testing
-    private final var paymentProcessingExecutor = Executors.newVirtualThreadPerTaskExecutor();
-    private final var fraudDetectionExecutor = Executors.newVirtualThreadPerTaskExecutor();
-    private final var complianceCheckExecutor = Executors.newVirtualThreadPerTaskExecutor();
-    private final var auditProcessingExecutor = Executors.newVirtualThreadPerTaskExecutor();
+    private final ExecutorService paymentProcessingExecutor = Executors.newVirtualThreadPerTaskExecutor();
+    private final ExecutorService fraudDetectionExecutor = Executors.newVirtualThreadPerTaskExecutor();
+    private final ExecutorService complianceCheckExecutor = Executors.newVirtualThreadPerTaskExecutor();
+    private final ExecutorService auditProcessingExecutor = Executors.newVirtualThreadPerTaskExecutor();
     
     @BeforeEach
     void setUp() {
